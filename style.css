@@ -8,8 +8,14 @@ body{
     
 }
 #bot{
+    border: 1px solid white;
+    background-color: white;
 }
 #user{
+    border: 1px solid white;
+    background-color: white;
+
+
 }
 #resultBox{
 }
@@ -21,12 +27,15 @@ button{
     cursor: pointer;
     background-color: aqua;
     border-radius: 30px;
+    
 }
 #userResult{
-    color:white;
+    color:black;
     font-size: 40px;
+    padding: 5px 50px 5px 50px;
 }
 #botResult{
-    color:white;
+    color:black;
     font-size: 40px;
+    padding: 5px 50px 5px 50px;
 }

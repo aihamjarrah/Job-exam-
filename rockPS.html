@@ -7,17 +7,17 @@
       let userWin = 0;
       let botWin = 0;
       const rockPaperScissors = (userMove) => {
-          if(userWin === 3){
-              alert("You Won the game")
-              location.reload()
-              return;
-          }
-          if(botWin === 3){
-              alert("You lost the game")
-              location.reload()
-              return;
-          }
-          const validMoves = ["rock", "paper", "scissors"]
+        if (userWin === 3) {
+          alert("You Won the game");
+          location.reload();
+          return;
+        }
+        if (botWin === 3) {
+          alert("You lost the game");
+          location.reload();
+          return;
+        }
+        const validMoves = ["rock", "paper", "scissors"];
         const randomGen = () => {
           let number = Math.ceil(Math.random() * 3);
           if (number === 1) {
@@ -29,10 +29,8 @@
           }
         };
         let randomMove = randomGen();
-        if (
-          !validMoves.includes(userMove)
-        ) {
-          console.log("Invalid Move")
+        if (!validMoves.includes(userMove)) {
+          console.log("Invalid Move");
         } else if (userMove === randomMove) {
           document.getElementById("result").innerText = "Draw!";
           document.getElementById("userResult").innerText = userWin;
@@ -77,14 +75,14 @@
     <div id="resultBox">
       <p id="result">Choose your move to start the game</p>
     </div>
-    <p id="userResult">0</p>
 
     <div id="user">
-      <div id="moves">
-        <button onclick="rock()" id="rockButton">Rock</button>
-        <button onclick="paper()" id="paperButton">Paper</button>
-        <button onclick="scissors()" id="scissorsButton">Scissors</button>
-      </div>
+      <p id="userResult">0</p>
+    </div>
+    <div id="moves">
+      <button onclick="rock()" id="rockButton">Rock</button>
+      <button onclick="paper()" id="paperButton">Paper</button>
+      <button onclick="scissors()" id="scissorsButton">Scissors</button>
     </div>
   </body>
 </html>
