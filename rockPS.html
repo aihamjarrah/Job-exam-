@@ -37,31 +37,25 @@
           document.getElementById("result").innerText = "Draw!";
           document.getElementById("userResult").innerText = userWin;
           document.getElementById("botResult").innerText = botWin;
-          console.log("Draw")
         } else if (userMove === "rock" && randomMove === "scissors") {
           userWin += 1;
           document.getElementById("result").innerText = "You Win!";
           document.getElementById("botResult").innerText = botWin;
           document.getElementById("userResult").innerText = userWin;
-          console.log("You win ")
         } else if (userMove === "paper" && randomMove === "scissors") {
           userWin += 1;
           document.getElementById("result").innerText = "You Win!";
           document.getElementById("botResult").innerText = botWin;
           document.getElementById("userResult").innerText = userWin;
-          console.log("You win")
         } else if (userMove === "scissors" && randomMove === "paper") {
           userWin += 1;
           document.getElementById("result").innerText = "You Win!";
           document.getElementById("userResult").innerText = userWin;
           document.getElementById("botResult").innerText = botWin;
-          console.log("You win")
         } else {
           botWin += 1;
           document.getElementById("result").innerText = "You Lost!";
           document.getElementById("botResult").innerText = botWin;
-
-          console.log("You lost")
         }
       };
       const rock = () => {
