@@ -1,17 +1,95 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock paper scissors</title>
-    <script src="index.js"></script>
-</head>
-<body>
-    <div id="bot">
+    <script>
+      let userWin = 0;
+      let botWin = 0;
+      const rockPaperScissors = (userMove) => {
+          if(userWin === 3){
+              alert("You Won the game")
+              location.reload()
+              return;
+          }
+          if(botWin === 3){
+              alert("You lost the game")
+              location.reload()
+              return;
+          }
+          const validMoves = ["rock", "paper", "scissors"]
+        const randomGen = () => {
+          let number = Math.ceil(Math.random() * 3);
+          if (number === 1) {
+            return "rock";
+          } else if (number === 2) {
+            return "paper";
+          } else {
+            return "scissors";
+          }
+        };
+        let randomMove = randomGen();
+        if (
+          !validMoves.includes(userMove)
+        ) {
+          console.log("Invalid Move")
+        } else if (userMove === randomMove) {
+          document.getElementById("result").innerText = "Draw!";
+          document.getElementById("userResult").innerText = userWin;
+          document.getElementById("botResult").innerText = botWin;
+          console.log("Draw")
+        } else if (userMove === "rock" && randomMove === "scissors") {
+          userWin += 1;
+          document.getElementById("result").innerText = "You Win!";
+          document.getElementById("botResult").innerText = botWin;
+          document.getElementById("userResult").innerText = userWin;
+          console.log("You win ")
+        } else if (userMove === "paper" && randomMove === "scissors") {
+          userWin += 1;
+          document.getElementById("result").innerText = "You Win!";
+          document.getElementById("botResult").innerText = botWin;
+          document.getElementById("userResult").innerText = userWin;
+          console.log("You win")
+        } else if (userMove === "scissors" && randomMove === "paper") {
+          userWin += 1;
+          document.getElementById("result").innerText = "You Win!";
+          document.getElementById("userResult").innerText = userWin;
+          document.getElementById("botResult").innerText = botWin;
+          console.log("You win")
+        } else {
+          botWin += 1;
+          document.getElementById("result").innerText = "You Lost!";
+          document.getElementById("botResult").innerText = botWin;
 
+          console.log("You lost")
+        }
+      };
+      const rock = () => {
+        rockPaperScissors("rock");
+      };
+      const paper = () => {
+        rockPaperScissors("paper");
+      };
+      const scissors = () => {
+        rockPaperScissors("scissors");
+      };
+    </script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="bot">
+      <p id="botResult">0</p>
+    </div>
+    <div id="resultBox">
+      <p id="result">Click on shake to start the game</p>
     </div>
     <div id="user">
-        
+      <p id="userResult">0</p>
+      <div id="moves">
+        <button onclick="rock()" id="rockButton">Rock</button>
+        <button onclick="paper()" id="paperButton">Paper</button>
+        <button onclick="scissors()" id="scissorsButton">Scissors</button>
+      </div>
     </div>
-    
-</body>
+  </body>
 </html>

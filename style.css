@@ -1,0 +1,19 @@
+body{
+    display: flex;
+    flex-direction: column;
+    gap: 200px;
+    align-items: center;
+    
+}
+#bot{
+    border : 2px solid black
+}
+#user{
+    border: 2px solid blue;
+}
+#resultBox{
+    border: 2px solid red;
+}
+#play{
+    cursor: pointer;
+}
